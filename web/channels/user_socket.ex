@@ -17,12 +17,11 @@ defmodule Chat.UserSocket do
   #
   # To deny connection, return `:error`.
   #
-  def connect({"user" => user}, socket) do
+  def connect(%{"user" => user}, socket) do
     {:ok, assign(socket, :user, user)}
   end
-  # See `Phoenix.Token` documentation for examples in
-  # performing token verification on connect.
-  def connect(_params, socket) do
+
+  def connect(_params, _socket) do
     :error
   end
 
