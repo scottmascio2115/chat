@@ -10,7 +10,7 @@ defmodule Chat.MessageView do
       topic: message.topic,
       user: message.user,
       body: message.body,
-      timestamp: Ecto.DateTime.to_iso8601(message.inserted_at)
+      timestamp: Ecto.DateTime.utc
     }
   end
 end
